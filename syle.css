@@ -1,0 +1,74 @@
+@font-face {
+    font-family: homoarak ;
+    src: url(HOMOARAK.TTF);
+}
+
+:root{
+    --light-color:#ffc312;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: #2C3A47;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    gap: 50px;
+}
+
+h2{
+    color: #F9CA24;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.frame{
+    width: 60VW;
+    height: 30vh;
+    background-color: #111;
+    border: 50PX solid #F9CA24;
+    padding: 10PX;
+    border-radius: 10px;
+    box-shadow: rgba(17,17,26,0.05) 0px 4px 16px, rgba(17,17,26,0.05) 0px 8px 32px;
+    font-size: 80px;
+    text-align: center;
+    line-height: 180px;
+}
+
+.clock{
+    font-family: homoarak ;
+    color: white;
+    text-shadow:0 0 20px var(--light-color) ;
+    position: relative;
+}
+
+.clock::after{
+    content: attr(data-text);
+    position: absolute;
+    left: 100px;
+    top: 0;
+    filter: blur(40px);
+}
+
+.clock::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: var(--light-color);
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    filter: blur(40px);
+
+}
